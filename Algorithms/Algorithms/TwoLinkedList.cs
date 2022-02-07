@@ -119,17 +119,12 @@ namespace Algorithms
                 {
                     Head = Head.NextNode;
                     Head.PrevNode = null;
-                    currentNode.NextNode = null;
-                    currentNode.PrevNode = null;
                 }
                 return; 
             } else if (index == GetCount() - 1) //удаляем хвост
             {
-                Node<T> lastNode = Tail;
                 Tail = Tail.PrevNode;
                 Tail.NextNode = null;
-                lastNode.NextNode = null;
-                lastNode.PrevNode = null;
 
             }
             else
@@ -145,8 +140,6 @@ namespace Algorithms
                 prevNode.NextNode = currentNode.NextNode;
                 Node<T> nextNode = currentNode.NextNode;
                 nextNode.PrevNode = prevNode;
-                currentNode.NextNode = null;
-                currentNode.PrevNode = null;
             }
         }
 
@@ -175,18 +168,13 @@ namespace Algorithms
                 {
                     Head = Head.NextNode;
                     Head.PrevNode = null;
-                    currentNode.NextNode = null;
-                    currentNode.PrevNode = null;
                 }
                 isRemove = true;
             }
             else if (node == Tail) //удаляем хвост
             {
-                Node<T> lastNode = Tail;
                 Tail = Tail.PrevNode;
                 Tail.NextNode = null;
-                lastNode.NextNode = null;
-                lastNode.PrevNode = null;
                 isRemove = true;
 
             }
@@ -200,8 +188,7 @@ namespace Algorithms
                         prevNode.NextNode = currentNode.NextNode;
                         Node<T> nextNode = currentNode.NextNode;
                         nextNode.PrevNode = prevNode;
-                        currentNode.NextNode = null;
-                        currentNode.PrevNode = null;
+
                         isRemove = true;
                     }
                     currentNode = currentNode.NextNode;
