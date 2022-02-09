@@ -13,7 +13,8 @@ namespace Algorithms
                 Console.WriteLine("Выберите пункт меню:");
                 Console.WriteLine("1. Алгоритм проверки простого числа");
                 Console.WriteLine("2. Расчет числа Фибоначчи");
-                Console.WriteLine("Для выходва нажмите ESC");
+                Console.WriteLine("3. Двусвязанный список");
+                Console.WriteLine("Для выхода нажмите ESC");
                 ConsoleKey userChoice = Console.ReadKey().Key;
                 switch (userChoice)
                 {
@@ -28,6 +29,12 @@ namespace Algorithms
                     case ConsoleKey.D2:
                         {
                             PrintFibonacciTest();
+                            break;
+                        }
+                    case ConsoleKey.NumPad3:
+                    case ConsoleKey.D3:
+                        {
+                            Lesson2.TestTwoLinkedList();
                             break;
                         }
                     default: 
@@ -193,5 +200,9 @@ namespace Algorithms
             Console.Write("Для выхода в главное меню нажмите любую кнопку...");
             Console.ReadKey();
         }
+
+        
+
+
     }
 }
