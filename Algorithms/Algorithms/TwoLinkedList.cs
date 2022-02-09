@@ -8,8 +8,8 @@ namespace Algorithms
 {
     internal class TwoLinkedList<T> : ILinkedList<T>
     {
-        public Node<T> Head { get; set; }
-        public Node<T> Tail { get; set; }
+        private Node<T> Head { get; set; }
+        private Node<T> Tail { get; set; }
 
         /// <summary>
         /// Добавляет новый элемент в конец списка
@@ -18,7 +18,7 @@ namespace Algorithms
         public void AddNode(T value)
         {
             Node<T> newNode = new Node<T>(value);
-            if(Tail == null)
+            if (Tail == null)
             {
                 Head = newNode;
                 Tail = newNode;
@@ -42,7 +42,7 @@ namespace Algorithms
         {
             Node<T> newNode = new Node<T>(value);
             Node<T> currentNode = Head;
-            if(node == Tail)
+            if (node == Tail)
             {
                 AddNode(value);
             }
@@ -100,7 +100,7 @@ namespace Algorithms
         /// <param name="index">Порядковый номер</param>
         public void RemoveNode(int index)
         {
-            if(index + 1 > GetCount())
+            if (index + 1 > GetCount())
             {
                 throw new ArgumentOutOfRangeException();
             }
@@ -110,7 +110,7 @@ namespace Algorithms
             if (index == 0)
             {
                 //в списке один элемент
-                if(GetCount() == 1)
+                if (GetCount() == 1)
                 {
                     Head = null;
                     Tail = null;
@@ -120,8 +120,9 @@ namespace Algorithms
                     Head = Head.NextNode;
                     Head.PrevNode = null;
                 }
-                return; 
-            } else if (index == GetCount() - 1) //удаляем хвост
+                return;
+            }
+            else if (index == GetCount() - 1) //удаляем хвост
             {
                 Tail = Tail.PrevNode;
                 Tail.NextNode = null;
@@ -194,7 +195,7 @@ namespace Algorithms
                     currentNode = currentNode.NextNode;
                 }
             }
-           
+
             if (!isRemove)
             {
                 throw new MissingFieldException();
