@@ -123,7 +123,7 @@ namespace Algorithms
                 //есть оба потомка
                 else
                 {
-                    //находим минимальный элемент в правом поддереве
+                    //находим минимальный элемент в левом поддереве
                     TreeNode<T> minNode = node.Left;
                     while (minNode.Left != null)
                     {
