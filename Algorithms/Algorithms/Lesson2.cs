@@ -3,9 +3,13 @@
 
 namespace Algorithms
 {
-    static internal class Lesson2
+    internal class Lesson2:ILesson
     {
-        static internal void TestTwoLinkedList()
+        public string LessonID { get => "3"; }
+
+        public string Description { get => "Двусвязанный список"; }
+
+        public void Print()
         {
             Console.Clear();
             TwoLinkedList<int> twoLinkedList = new TwoLinkedList<int>();
@@ -47,5 +51,6 @@ namespace Algorithms
             Console.Write("Для выхода в главное меню нажмите любую кнопку...");
             Console.ReadKey();
         }
+
     }
 }
