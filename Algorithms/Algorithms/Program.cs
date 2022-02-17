@@ -13,6 +13,8 @@ namespace Algorithms
             lessons.Add((ILesson)new Lesson1_2());
             lessons.Add((ILesson)new Lesson2());
             lessons.Add((ILesson)new Lesson3());
+            lessons.Add((ILesson)new Lesson4());
+            lessons.Add((ILesson)new Lesson5());
 
             while (true)
             {
@@ -53,6 +55,21 @@ namespace Algorithms
                             Console.ReadKey();
                             break;
                         }
+                    case ConsoleKey.NumPad5:
+                    case ConsoleKey.D5:
+                        {
+                            lessons[4].Print();
+                            Console.ReadKey();
+                            break;
+                        }
+                    case ConsoleKey.NumPad6:
+                    case ConsoleKey.D6:
+                        {
+                            lessons[5].Print();
+                            Console.ReadKey();
+                            break;
+                        }
+
                     default:
                         {
                             Console.WriteLine("");
