@@ -126,10 +126,10 @@ namespace Algorithms
                 else
                 {
                     //находим минимальный элемент в правом поддереве
-                    TreeNode<T> minNode = node.Left;
-                    while (minNode.Left != null)
+                    TreeNode<T> minNode = node.Right;
+                    while (minNode.Right != null)
                     {
-                        minNode = node.Left;
+                        minNode = node.Right;
                     }
                     //меняем на текущего значение 
                     node.Data = minNode.Data;
