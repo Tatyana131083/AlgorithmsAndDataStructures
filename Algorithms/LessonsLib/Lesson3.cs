@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Diagnostics;
+using Ilesson;
+using AlgorithmsLib;
 
 
-public struct PointStruct
-{
-    public double X;
-    public double Y;
-}
 
-namespace Algorithms
+namespace LessonsLib
 {
      internal class Lesson3 : ILesson
     {
@@ -29,8 +26,11 @@ namespace Algorithms
             double timeForStructV2 = PointDistanceForArray(arrayStructV2);
 
             Console.WriteLine($"{"Количество точек", -20} {"PointStructDouble", -30} {"PointClassDouble", -30} {"Ratio", -30}");
-            Console.WriteLine($"{"100000",-20} {timeForStructV1,-30} {timeForPointV1,-30} {(timeForStructV1 / timeForPointV1) * 100,-30}");
-            Console.WriteLine($"{"200000",-20} {timeForStructV2,-30} {timeForPointV2,-30} {(timeForStructV2 / timeForPointV2) * 100,-30}");
+            Console.WriteLine($"{"100000",-20} {timeForStructV1,-30} {timeForPointV1,-30} {(timeForStructV1 / timeForPointV1)*100,-30}");
+            Console.WriteLine($"{"200000",-20} {timeForStructV2,-30} {timeForPointV2,-30} {(timeForStructV2 / timeForPointV2)*100,-30}");
+            Console.WriteLine();
+            Console.Write("Для выхода в главное меню нажмите любую кнопку...");
+            Console.ReadKey();
         }
         /// <summary>
         /// Создание двухмерного массива точек, инициализированных случайным значение

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 
-namespace Algorithms
+namespace AlgorithmsLib
 {
     public class TreeNode<T>
     {
