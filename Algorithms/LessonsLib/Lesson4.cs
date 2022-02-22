@@ -1,7 +1,8 @@
 ﻿using System;
+using Ilesson;
+using AlgorithmsLib;
 
-
-namespace Algorithms
+namespace LessonsLib
 {
     internal class Lesson4 : ILesson
     {
@@ -46,6 +47,9 @@ namespace Algorithms
             {
                 Console.WriteLine("Узел найден");
             }
+            Console.WriteLine();
+            Console.Write("Для выхода в главное меню нажмите любую кнопку...");
+            Console.ReadKey();
         }
 
     }

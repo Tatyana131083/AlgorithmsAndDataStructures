@@ -1,6 +1,5 @@
 ﻿
-
-namespace Algorithms
+namespace AlgorithmsLib
 {
     public interface ILinkedList<T>
     {

@@ -1,7 +1,7 @@
 ﻿
-namespace Algorithms
+namespace Ilesson
 {
-    internal interface ILesson
+    public interface ILesson
     {
         public string LessonID { get; }
         public string Description { get; }

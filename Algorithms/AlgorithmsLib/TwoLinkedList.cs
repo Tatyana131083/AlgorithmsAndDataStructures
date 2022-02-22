@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Algorithms
+
+namespace AlgorithmsLib
 {
-    internal class TwoLinkedList<T> : ILinkedList<T>
+    public class TwoLinkedList<T> : ILinkedList<T>
     {
         private Node<T> Head { get; set; }
         private Node<T> Tail { get; set; }

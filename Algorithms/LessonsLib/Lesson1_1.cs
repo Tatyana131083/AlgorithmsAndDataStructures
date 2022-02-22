@@ -1,9 +1,9 @@
 ﻿using System;
+using Ilesson;
 
-
-namespace Algorithms
+namespace LessonsLib
 {
-    internal class Lesson1_1:ILesson
+    public class Lesson1_1:ILesson
     {
         public string LessonID { get => "1"; }
 

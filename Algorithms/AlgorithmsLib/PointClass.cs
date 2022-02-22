@@ -1,7 +1,7 @@
 ﻿
-namespace Algorithms
+namespace AlgorithmsLib
 {
-    internal class PointClass
+    public class PointClass
     {
         public double X { get; set; }
         public double Y { get; set; }

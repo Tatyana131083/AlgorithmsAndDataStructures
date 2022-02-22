@@ -1,7 +1,8 @@
 ﻿using System;
+using Ilesson;
+using AlgorithmsLib;
 
-
-namespace Algorithms
+namespace LessonsLib
 {
     internal class Lesson2:ILesson
     {

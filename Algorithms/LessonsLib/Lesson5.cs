@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Ilesson;
+using AlgorithmsLib;
 
-
-namespace Algorithms
+namespace LessonsLib
 {
     internal class Lesson5 : ILesson
 
@@ -45,7 +46,9 @@ namespace Algorithms
                 Console.Write($"{treeNode.Data} ");
             }
             Console.Write(result);
-
+            Console.WriteLine();
+            Console.Write("Для выхода в главное меню нажмите любую кнопку...");
+            Console.ReadKey();
         }
 
 

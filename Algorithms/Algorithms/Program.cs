@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Ilesson;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 
 namespace Algorithms
 {
@@ -8,16 +11,18 @@ namespace Algorithms
 
         static void Main(string[] args)
         {
+            var libraryPath = @"C:\Users\yalli\source\repos\AlgorithmsAndDataStructures\Algorithms\LessonsLib\bin\Debug\net5.0\LessonsLib.dll";
+            Assembly assembly = Assembly.LoadFrom(libraryPath);
+            var classesLib = assembly.GetTypes();
             List<ILesson> lessons = new List<ILesson>();
-            lessons.Add((ILesson)new Lesson1_1());
-            lessons.Add((ILesson)new Lesson1_2());
-            lessons.Add((ILesson)new Lesson2());
-            lessons.Add((ILesson)new Lesson3());
-            lessons.Add((ILesson)new Lesson4());
-            lessons.Add((ILesson)new Lesson5());
-
-            while (true)
+            foreach (Type type in classesLib)
             {
+                lessons.Add((ILesson)Activator.CreateInstance(type));
+            }
+            string userChoice = string.Empty;
+            while (userChoice != "exit")
+            {
+                bool isRightLesson = false;
                 Console.Clear();
                 Console.WriteLine("Выберите пункт меню:");
                 foreach(ILesson lesson in lessons)
@@ -25,61 +30,24 @@ namespace Algorithms
                     Console.WriteLine($"{lesson.LessonID}. {lesson.Description}");
                 }
                 Console.WriteLine();
-                Console.WriteLine("Для выхода нажмите ESC");
-                ConsoleKey userChoice = Console.ReadKey().Key;
-                switch (userChoice)
+                Console.WriteLine("Для выхода напечатайте exit");
+                userChoice = Console.ReadLine();
+                foreach (ILesson lesson in lessons)
                 {
-                    case ConsoleKey.Escape: return;
-                    case ConsoleKey.NumPad1:
-                    case ConsoleKey.D1:
-                        {
-                            lessons[0].Print();
-                            break;
-                        }
-                    case ConsoleKey.NumPad2:
-                    case ConsoleKey.D2:
-                        {
-                            lessons[1].Print();
-                            break;
-                        }
-                    case ConsoleKey.NumPad3:
-                    case ConsoleKey.D3:
-                        {
-                            lessons[2].Print();
-                            break;
-                        }
-                    case ConsoleKey.NumPad4:
-                    case ConsoleKey.D4:
-                        {
-                            lessons[3].Print();
-                            Console.ReadKey();
-                            break;
-                        }
-                    case ConsoleKey.NumPad5:
-                    case ConsoleKey.D5:
-                        {
-                            lessons[4].Print();
-                            Console.ReadKey();
-                            break;
-                        }
-                    case ConsoleKey.NumPad6:
-                    case ConsoleKey.D6:
-                        {
-                            lessons[5].Print();
-                            Console.ReadKey();
-                            break;
-                        }
-
-                    default:
-                        {
-                            Console.WriteLine("");
-                            Console.WriteLine("Введен неверный пункт меню.");
-                            Console.Write("Нажмите любую кнопку для продолжения...");
-                            Console.ReadKey();
-                            break;
-                        }
-
+                    if (userChoice == lesson.LessonID)
+                    {
+                        isRightLesson = true;
+                        lesson.Print();
+                    }
                 }
+                if (!isRightLesson && userChoice != "exit")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("Введен неверный пункт меню.");
+                    Console.Write("Нажмите любую кнопку для продолжения...");
+                    Console.ReadKey();
+                }
+               
             }
 
         }

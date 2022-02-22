@@ -1,10 +1,11 @@
 ﻿using System;
+using Ilesson;
 
-namespace Algorithms
+namespace LessonsLib
 {
-    internal class Lesson1_2: ILesson
+    public class Lesson1_2: ILesson
     {
-        public string LessonID { get => "1"; }
+        public string LessonID { get => "2"; }
 
         public string Description { get => "Расчет числа Фибоначчи"; }
 
